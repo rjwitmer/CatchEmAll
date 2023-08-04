@@ -11,6 +11,7 @@
 		CC1B48532A7D73E70085B29E /* CreaturesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1B48522A7D73E70085B29E /* CreaturesListView.swift */; };
 		CC1B48552A7D73E90085B29E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC1B48542A7D73E90085B29E /* Assets.xcassets */; };
 		CC1B48582A7D73E90085B29E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC1B48572A7D73E90085B29E /* Preview Assets.xcassets */; };
+		CC1B48602A7D7E680085B29E /* CreaturesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1B485F2A7D7E680085B29E /* CreaturesViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		CC1B48542A7D73E90085B29E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC1B48572A7D73E90085B29E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CC1B485E2A7D74A90085B29E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CC1B485F2A7D7E680085B29E /* CreaturesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreaturesViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				CC1B485E2A7D74A90085B29E /* Info.plist */,
 				CC1B48502A7D73E70085B29E /* CatchEmAllApp.swift */,
+				CC1B485F2A7D7E680085B29E /* CreaturesViewModel.swift */,
 				CC1B48522A7D73E70085B29E /* CreaturesListView.swift */,
 				CC1B48542A7D73E90085B29E /* Assets.xcassets */,
 				CC1B48562A7D73E90085B29E /* Preview Content */,
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC1B48602A7D7E680085B29E /* CreaturesViewModel.swift in Sources */,
 				CC1B48532A7D73E70085B29E /* CreaturesListView.swift in Sources */,
 				CC1B48512A7D73E70085B29E /* CatchEmAllApp.swift in Sources */,
 			);
