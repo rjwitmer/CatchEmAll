@@ -26,18 +26,27 @@ struct DetailView: View {
                 .padding(.bottom)
             
             HStack {
-                Image(systemName: "figure.run.circle")
-                    .resizable()
-                    .scaledToFit()
-                    .backgroundStyle(.white)
-                    .frame(maxHeight: 96)
-                    .cornerRadius(16)
-                    .shadow(radius: 8, x: 5, y: 5)
-                    .overlay {
-                        RoundedRectangle(cornerRadius: 16)
-                            .stroke(.gray.opacity(0.5), lineWidth: 1)
-                    }
-                    .padding(.trailing)
+                AsyncImage(url: URL(string: creatureDetailVM.imageURL)) { image in
+                    image
+                        .resizable()
+                        .scaledToFit()
+                        .background(.white)
+                        .frame(maxHeight: 96)
+                        .cornerRadius(16)
+                        .shadow(radius: 8, x: 5, y: 5)
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 16)
+                                .stroke(.gray.opacity(0.5), lineWidth: 1)
+                        }
+                        .padding(.trailing)
+                } placeholder: {
+                    ProgressView()
+                        .scaleEffect(2)
+                        .tint(.green)
+                        .progressViewStyle(.circular)
+
+                }
+                
                 VStack (alignment: .leading) {
                     HStack (alignment: .top) {
                         Text("Height:")
@@ -73,6 +82,6 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(creature: Creature(name: "Bulbasaur", url: "https://pokeapi.co/api/v2/pokemon/1/"))
+        DetailView(creature: Creature(name: "Place Holder", url: "https://pokeapi.co/api/v2/pokemon/1/"))
     }
 }
