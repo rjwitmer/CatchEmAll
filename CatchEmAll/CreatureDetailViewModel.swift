@@ -25,12 +25,15 @@ class CreatureDetailViewModel: ObservableObject {
     @Published var height = 0.0
     @Published var weight = 0.0
     @Published var imageURL = ""
+    @Published var isLoading = false
     
     func getData() async {
         print("🕸️ We are accessing the URL \(urlString)")
+        isLoading = true
         // convert urlString to a special URL type
         guard let url = URL(string: urlString) else {
             print("😡 ERROR: Could not create a URL from \(urlString)")
+            isLoading = false
             return
         }
         
@@ -40,14 +43,17 @@ class CreatureDetailViewModel: ObservableObject {
             // Try to decode JSON data into our out data structures
             guard let returned = try? JSONDecoder().decode(Returned.self, from: data) else {
                 print("😡 JSON ERROR: Could not decode returned JSON data")
+                isLoading = false
                 return
             }
             self.height = returned.height
             self.weight = returned.weight
             self.imageURL = returned.sprites.front_default
+            isLoading = false
 
         } catch {
             print("😡 ERROR: Could not use URL at \(urlString) to get data and response --> \(error.localizedDescription)")
+            isLoading = false
         }
     }
 }

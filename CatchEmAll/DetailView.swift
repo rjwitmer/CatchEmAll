@@ -40,10 +40,11 @@ struct DetailView: View {
                         }
                         .padding(.trailing)
                 } placeholder: {
-                    ProgressView()
-                        .scaleEffect(2)
-                        .tint(.green)
-                        .progressViewStyle(.circular)
+                    if creatureDetailVM.isLoading {
+                        ProgressView()
+                            .progressViewStyle(.circular)
+                    }
+
 
                 }
                 
