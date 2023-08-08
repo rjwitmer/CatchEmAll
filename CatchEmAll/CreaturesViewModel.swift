@@ -12,7 +12,7 @@ class CreaturesViewModel: ObservableObject {
     
     private struct Returned: Codable {
         var count: Int
-        var next: String    // TODO: We will want to change this to an optional later
+        var next: String?    // Optional to handle null case
         var results: [Creature]
     }
     
@@ -37,8 +37,8 @@ class CreaturesViewModel: ObservableObject {
                 return
             }
             self.count = returned.count
-            self.urlString = returned.next
-            self.creaturesArray = returned.results
+            self.urlString = returned.next ?? ""    // Optional to handle null case
+            self.creaturesArray += returned.results
         } catch {
             print("😡 ERROR: Could not use URL at \(urlString) to get data and response --> \(error.localizedDescription)")
         }
