@@ -49,4 +49,11 @@ class CreaturesViewModel: ObservableObject {
             isLoading = false
         }
     }
+    
+    func loadAll() async {
+        guard urlString.hasPrefix("http") else {return}
+        
+        await getData()     // Get next page of data
+        await loadAll()     // Call loadAll() again - will stop when all pages are retried (urlString == nul)
+    }
 }
