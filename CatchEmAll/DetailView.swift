@@ -31,7 +31,7 @@ struct DetailView: View {
                         .resizable()
                         .scaledToFit()
                         .background(.white)
-                        .frame(maxHeight: 96)
+                        .frame(width: 96, height: 96)
                         .cornerRadius(16)
                         .shadow(radius: 8, x: 5, y: 5)
                         .overlay {
@@ -40,11 +40,10 @@ struct DetailView: View {
                         }
                         .padding(.trailing)
                 } placeholder: {
-                    if creatureDetailVM.isLoading {
-                        ProgressView()
-                            .progressViewStyle(.circular)
-                    }
-
+                    Rectangle()
+                        .foregroundColor(.clear)
+                        .frame(width: 96, height: 96)
+                        .padding(.trailing)
 
                 }
                 
